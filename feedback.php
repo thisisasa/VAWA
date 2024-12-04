@@ -41,11 +41,13 @@ if (!isset($_SESSION['email'])) {
                                         <div class="mb-10">
                                             <h1 class="text-3xl font-extrabold uppercase !leading-snug text-primary md:text-4xl">Customer Feedback</h1>
                                         </div>
-                                        <form class="space-y-5 dark:text-white" @submit.prevent="window.location='index.html'">
+                                        <form class="space-y-5 dark:text-white" method="GET" action="feedback_script.php">
                                             <div>
                                                 <label for="ctnTextarea">Comment</label>
-                                                <textarea id="ctnTextarea" rows="3" class="form-textarea" placeholder="What did you like or dislike?" required></textarea>
+                                                <!-- <input type="text" name="name" id=""> -->
+                                                <textarea   type="text" name="name"  id="ctnTextarea" rows="3" class="form-textarea" placeholder="What did you like or dislike?" required></textarea>
                                             </div>
+                                            
                                             <div>
                                                 <label for="Comment">How was your experience?</label><br>
                                                     <div class="rate">
@@ -64,26 +66,11 @@ if (!isset($_SESSION['email'])) {
                                             <div>
                                                <br> 
                                             </div>
-                                            <div >
-                                                <form name="csp" class="space-y-5 dark:text-white" method="POST">
-                                                  
-                                                        <div class="flex items-center whitespace-nowrap">
-                                                            <div class="ltr:mr-3 rtl:ml-3">
-                                                            <label for="Comment">CAPTCHA:</label>
-                                                            </div>
-                                                            <div class="ltr:mr-3 rtl:ml-3" x-tooltip="Star" data-placement="top" role="tooltip">
-                                                                <label id="myNumber"></label>
-                                                            </div>
-                                                         </div>              
-                                                   
-                                                    <div class="relative text-white-dark">
-                                                        <input type="text" placeholder="Type the characters above" class="form-input" required/>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <button type="submit" class="btn btn-gradient !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
+                                            
+                                            <!-- <button type="submit" class="btn btn-gradient !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
                                                 Submit
-                                            </button>
+                                            </button> -->
+                                            <input type="submit" name="Submit" id="" class="btn btn-gradient">
                                         </form>
                                 </div>
                             </div>

@@ -104,16 +104,13 @@ if (isset($_SESSION['email'])) {
                                     <h1 class="text-3xl font-extrabold uppercase !leading-snug text-primary md:text-4xl">Log in</h1>
                                     <p class="text-base font-bold leading-normal text-white-dark">Enter your email and password to login</p>
                                 </div>
-                                <?php
-                                    if(isset($_GET["error"])){
-                                        echo $_GET['error'];
-                                    }
-                                ?>
+                                
                                 <form class="space-y-5 dark:text-white" action="login_submit.php" method="POST" >
                                     <div>
                                         <label for="Email">Email</label>
                                         <div class="relative text-white-dark">
-                                            <input id="Email" type="email" placeholder="Enter Email" class="form-input ps-10 placeholder:text-white-dark" name="email">
+                                        <!-- <input type="text" id="email" name="email"><br><br> -->
+                                            <input id="Email" type="text" placeholder="Enter Email" class="form-input ps-10 placeholder:text-white-dark" name="email">
                                             <span class="absolute start-4 top-1/2 -translate-y-1/2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                     <path opacity="0.5" d="M10.65 2.25H7.35C4.23873 2.25 2.6831 2.25 1.71655 3.23851C0.75 4.22703 0.75 5.81802 0.75 9C0.75 12.182 0.75 13.773 1.71655 14.7615C2.6831 15.75 4.23873 15.75 7.35 15.75H10.65C13.7613 15.75 15.3169 15.75 16.2835 14.7615C17.25 13.773 17.25 12.182 17.25 9C17.25 5.81802 17.25 4.22703 16.2835 3.23851C15.3169 2.25 13.7613 2.25 10.65 2.25Z" fill="currentColor"></path>
@@ -125,6 +122,7 @@ if (isset($_SESSION['email'])) {
                                     <div>
                                         <label for="Password">Password</label>
                                         <div class="relative text-white-dark">
+                                        <!-- <input type="text" id="password" name="password"><br><br> -->
                                             <input id="Password" type="password" placeholder="Enter Password" class="form-input ps-10 placeholder:text-white-dark" name="password">
                                             <span class="absolute start-4 top-1/2 -translate-y-1/2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

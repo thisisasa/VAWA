@@ -271,21 +271,14 @@
                                         <div class="section-heading-footer">
                                         <h3 style="background-color:black; color:white;">Telephone</h3>
                                     </div>
-                                    
                                         <p>
                                             <a href="#" style="background-color:black; color:white;">+885 71 666 5235 </a>
                                         </p>
+                                        <p>
+                                            <a href="#" style="background-color:black; color:white;">venu@xyz.com </a>
+                                        </p>
                                     </div>
                                 </div>
-
-                                <h3 class="mb-0" style="background-color:black; color:white;">Join our newsletter</h3>
-                                <p style="background-color:black; color:white;">Be the first to know our latest updates and news!</p>
-                                <form action="#" method="" class="form-subscribe" >
-                                    <div class="form-group d-flex">
-                                        <input type="email" class="form-control mr-2" placeholder="Enter your email">
-                                        <input type="submit" value="Subscribe" class="btn btn-black px-4 text-white">
-                                    </div>
-                                </form>
                             </div>
 
                         </div>

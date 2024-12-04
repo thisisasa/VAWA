@@ -41,6 +41,7 @@ if (!isset($_SESSION['email'])) {
                     <div>
                         <ul class="flex space-x-2 rtl:space-x-reverse">
                             <h3 class="mb-6 text-xl font-bold md:text-3xl">About Us</h3>
+                           
                         </ul>
                         <div class="pt-5">
                             <div class="mb-5 grid grid-cols-1 gap-5 lg:grid-cols-3 xl:grid-cols-4">
@@ -133,7 +134,7 @@ if (!isset($_SESSION['email'])) {
                                         </h6>
                                         <ul class="mb-7 list-inside list-disc space-y-2 text-white-dark">
                                             <li>Broken Access Control</li>
-                                            <li>Cryptographic Failures</li>
+                                            <li><a href="ftp/legal.md">Cryptographic Failures</a></li>
                                             <li>Injection</li>
                                             <li>Insecure Design</li>
                                             <li>Security Misconfiguration</li>
@@ -142,15 +143,36 @@ if (!isset($_SESSION['email'])) {
                                             <li>Software and Data Integrity Failures</li>
                                             <li>Security Logging & Monitoring Failures</li>
                                             <li>Server-Side Request Forgery (SSRF)</li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <h3 class="mb-0">Join our newsletter</h3>
+                            <p>Be the first to know our latest updates and news!</p>
+                            <form action="about_submit.php" method="post" class="form-subscribe">
+                                <div class="form-group d-flex">
+                                    <input  size="20" type="text" class="form-input ps-5 " name="ip" placeholder="Enter your email">
+                                    <input type="submit" name="PingSubmit" class="btn btn-gradient" value="Subscribe">
+                                </div>
+                            </form>
+
+
+                    <!-- <form name="ping" action="about_submit.php" method="post">
+                        <h3 class="mb-0">Join our newsletter</h3>
+                        <p>
+                            <p>Be the first to know our latest updates and news!</p>
+                            <input type="text" class="form-input ps-10 placeholder:text-white-dark" name="ip">
+                            <input type="submit" name="PingSubmit" class="btn btn-gradient" value="Subscribe">
+                        </p>
+                        
+                    </form> -->
                     <!-- end main content section -->
                 </div>
             </div>
+           
             <!-- start footer section -->
             <?php
                 include 'includes/footer.php';
@@ -158,6 +180,7 @@ if (!isset($_SESSION['email'])) {
             <!-- end footer section --> 
         </div>
 
+  
         <script src="assets/js/alpine-collaspe.min.js"></script>
         <script src="assets/js/alpine-persist.min.js"></script>
         <script defer="" src="assets/js/alpine-ui.min.js"></script>

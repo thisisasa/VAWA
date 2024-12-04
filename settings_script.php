@@ -1,36 +1,38 @@
 <?php
 
-require("includes/common.php");
+if( isset( $_GET[ 'Change' ] ) ) {
+    //$escaped_string = mysqli_real_escape_string($conn, $input_string);
 
-if (!isset($_SESSION['email'])) {
-    header('location: index.php');
+    // Get input
+    $pass_new  = $_GET[ 'password_new' ];
+    $pass_conf = $_GET[ 'password_conf' ];
+
+    // Do the passwords match?
+    if( $pass_new == $pass_conf ) {
+        // They do!
+        //$pass_new = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $pass_new ) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));
+        $pass_new = md5( $pass_new );
+
+        // Update the database
+        $insert = "UPDATE `users` SET password = '$pass_new' WHERE user = '" . "';";
+       // $result = mysqli_query($GLOBALS["___mysqli_ston"],  $insert ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
+
+        // Feedback for the user
+        
+             
+        echo "  <pre>Password Changed.</pre>";
+       
+     //   header('Location: http://localhost/thevawa211/settings.php?');
+
+    }
+    else {
+        // Issue with passwords matching
+      //  echo "<pre>Passwords did not match.</pre>";
+    //   header('location: settings.php?error= 
+    //     Password Updated Successfully');
+    }
+
+    //((is_null($___mysqli_res = mysqli_close($GLOBALS["___mysqli_ston"]))) ? false : $___mysqli_res);
 }
 
-$old_pass = $_POST['oldpassword'];
-$old_pass = mysqli_real_escape_string($con, $old_pass);
-
-$new_pass = $_POST['newpassword'];
-$new_pass = mysqli_real_escape_string($con, $new_pass);
-
-
-$rep_pass = $_POST['renewpassword'];
-$rep_pass = mysqli_real_escape_string($con, $rep_pass);
-
-$query = "SELECT email, password FROM users WHERE email ='" . $_SESSION['email'] . "'";
-$result = mysqli_query($con, $query)or die($mysqli_error($con));
-$row = mysqli_fetch_array($result);
-
-$orig_pass = $row['password'];
-
-
-if ($new_pass != $rep_pass) {
-    header('location: settings.php?error=The two passwords don\'t match.');
-} else {
-    if ($old_pass == $orig_pass) {
-        $query = "UPDATE  users SET password = '" . $new_pass . "' WHERE email = '" . $_SESSION['email'] . "'";
-        mysqli_query($con, $query) or die($mysqli_error($con));
-        header('location: settings.php?error=Password Updated Successfully');
-    } else
-        header('location: settings.php?error=Wrong Old Password.');
-}
-?>
+?> 

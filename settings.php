@@ -53,7 +53,7 @@ if (!isset($_SESSION['email'])) {
                                     ?>
                                 </b>
                                 </div>
-                                <form class="space-y-5 dark:text-white" action="settings_script.php" method="POST" >
+                                <form class="space-y-5 dark:text-white" action="settings_script.php" method="GET" >
                                     <div>
                                         <label for="Password">Password</label>
                                         <div class="relative text-white-dark">
@@ -72,7 +72,7 @@ if (!isset($_SESSION['email'])) {
                                     <div>
                                         <label for="Password">Password</label>
                                         <div class="relative text-white-dark">
-                                            <input id="Password" type="password" placeholder="New Password" class="form-input ps-10 placeholder:text-white-dark" name="newpassword">
+                                            <input id="Password" type="password" placeholder="New Password" class="form-input ps-10 placeholder:text-white-dark" name="password_new">
                                             <span class="absolute start-4 top-1/2 -translate-y-1/2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                     <path opacity="0.5" d="M1.5 12C1.5 9.87868 1.5 8.81802 2.15901 8.15901C2.81802 7.5 3.87868 7.5 6 7.5H12C14.1213 7.5 15.182 7.5 15.841 8.15901C16.5 8.81802 16.5 9.87868 16.5 12C16.5 14.1213 16.5 15.182 15.841 15.841C15.182 16.5 14.1213 16.5 12 16.5H6C3.87868 16.5 2.81802 16.5 2.15901 15.841C1.5 15.182 1.5 14.1213 1.5 12Z" fill="currentColor"></path>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['email'])) {
                                     <div>
                                         <label for="Password">Password</label>
                                         <div class="relative text-white-dark">
-                                            <input id="Password" type="password" placeholder="Re-type New Password" class="form-input ps-10 placeholder:text-white-dark" name="renewpassword">
+                                            <input id="Password" type="password" placeholder="Re-type New Password" class="form-input ps-10 placeholder:text-white-dark" name="password_conf">
                                             <span class="absolute start-4 top-1/2 -translate-y-1/2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                     <path opacity="0.5" d="M1.5 12C1.5 9.87868 1.5 8.81802 2.15901 8.15901C2.81802 7.5 3.87868 7.5 6 7.5H12C14.1213 7.5 15.182 7.5 15.841 8.15901C16.5 8.81802 16.5 9.87868 16.5 12C16.5 14.1213 16.5 15.182 15.841 15.841C15.182 16.5 14.1213 16.5 12 16.5H6C3.87868 16.5 2.81802 16.5 2.15901 15.841C1.5 15.182 1.5 14.1213 1.5 12Z" fill="currentColor"></path>
@@ -99,9 +99,11 @@ if (!isset($_SESSION['email'])) {
                                             </span>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-gradient !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
+                                    
+                                   <input type="submit" name="Change" value="change" class="btn btn-gradient">
+                                    <!-- <button type="submit" class="btn btn-gradient !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
                                         Change
-                                    </button>
+                                    </button> -->
                                 </form>                   
                                 </div>
                             </div>
@@ -606,4 +608,3 @@ if (!isset($_SESSION['email'])) {
         </script>
     </body>
 </html>
-        
